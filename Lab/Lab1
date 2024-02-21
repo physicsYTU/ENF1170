@@ -1,0 +1,8 @@
+1- Write a program named as "Hello World".
+
+2- Write a program named triangle.cpp to input the base b and height h of a right-angle triangle, and output its area.
+
+3- Write a program named circle.cpp to input the radius r of a circle and output the circumference of the circle.
+
+3- Write a program to input kinetic energy K in MeV of a free electron (with mass me = 0.511 MeV/c) and outputs the
+   momentum in MeV/c and de Broglie wavelength in nanometers of the electron. Use relativistic kinematics.
