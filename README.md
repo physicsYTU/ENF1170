@@ -18,3 +18,17 @@ You don't have to specify everything while writing its code, which makes the pro
 but you don't get the opportunity to learn the logic structure of the program like C++.
 Once you have learned the C++ language, then other languages will be easy for you to learn, as your foundation becomes strong.
 
+Topic 1 - Introduction
+Topic 2 - C++ Basis
+Topic 3 - C++ Selection 
+Topic 4 - C++ Loops
+Topic 5 - C++ Functions
+Topic 6 - C++ Arrays, References,
+Topic 7 - Programs written in the lecture
+Topic 8 - Midterm Exam
+Topic 9 - C++ Pointers and Vectors
+Topic 10 - C++ Pointers and Vectors
+Topic 11 - C++ File Management
+Topic 12 - C++ Basic Classes
+Topic 13 - C++ Project
+Topic 14 - Programs written in the lecture
