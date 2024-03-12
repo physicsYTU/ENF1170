@@ -1,0 +1,224 @@
+Iterative Statements	
+
+
+The while Statement
+
+
+- often need to do repetitive calculations to solve problems
+- computers are good at this, humans are typically bad at this
+- a while loop can be used to iteratively execute a block of code 
+- need to specify the following
+	1) the code to execute before loop
+	2) the Boolean condition for continuing iteration
+	3) the block of code to be repeated
+- the program will execute block of code while condition remains TRUE
+- the code after the loop is executed when condition becomes FALSE
+
+// while loop syntax
+initialization code
+while ( Boolean expression  )
+   {
+   block of statements to be repeated
+   update variables in Boolean expression
+   }
+
+Counting Loops
+
+
+- often need to perform an operation fixed number of times
+- counting loops allow us to do this
+- need to do the following
+	1) initialize the loop counter
+	2) while counter has NOT reached desired number
+		a) perform desired operations
+		b) increment loop counter
+		c) check loop counter again
+
+// counting loop example
+Count = 0;
+while (Count < 10)
+   {
+   cout << Count << "squared=" << Count*Count << endl;
+   Count = Count + 1;
+   }
+
+// zero iterations loop
+Value = 42;
+while (Value < 42)
+   {
+   cout << Value << "doubled=" << Value*2 << endl;
+   Value = Value + 1;
+   }
+
+Conditional Loops
+
+
+- often need to vary the number of iterations based on the data values
+- conditional loop allow us to process data until given situation arises
+- can also be used to check for end of input or invalid data values
+- need to do the following
+	1) perform initialization code
+	2) while condition remains TRUE the program
+		a) perform desired operations
+		b) check terminating condition again
+
+// conditional loop example
+Amt = 99;
+while (Amt > 0)
+   {
+   cout << Amt << "halved=" << Amt/2 << endl;
+   Amt = Amt/2;
+   }
+
+// input varying loop
+cin >> Num;
+while (Num >= 0)
+   {
+   Val = sqrt(Num);
+   cout << Val << "squared=" << Num << endl;
+   cin >> Num;
+   }
+
+Infinite Loop Errors
+
+
+- it is possible to create while loops which execute forever
+- often these infinite loops are unplanned and unwanted
+- to get out of infinite loop you need to kill your program using ^C
+- occasionally infinite loops are used on purpose 
+(this is not recommended, but you may see it in other programmer's code)
+
+// trivial infinite loop example
+while (1)
+   cout << "Hello Mom\n";
+
+// accidental infinite loop example
+Total = Count = 0; 
+while (Count < 10)
+   {
+   Total = Total + Count;
+   // missing count increment
+   }
+
+// infinite loop caused by an I/O error
+// will execute forever if a character is 
+// typed as input instead of a number
+Height = 0;
+while (Height < 42)
+   {
+   cout "Enter height: ";
+   cin << Height;
+   }
+
+
+The for Statement
+
+
+- the for loop provides a compact syntax for iteration
+- typically used for counting loops, but can be used for any loop
+- allows you to specify the following all on one line
+	1) initialization statement(s)
+	2) Boolean expression for continuing loop
+	3) statements to be executed after loop
+
+// for loop syntax
+for ( initialization; Boolean expression ; increment )
+   {
+   statements to be repeated
+   }
+
+// for loop example
+for (Num = 0; Num < 10; Num = Num+1)
+   {
+   cout << Num << "cubed=" << Num*Num*Num << endl;
+   }
+
+Auto-increment and Auto-decrement Operators
+
+
+- instead of using  i = i+1 use equivalent statement  i++
+- similarly j = j-1 can be written as j--
+- similarly a = a+b can be written as a += b
+- similarly c = c-d can be written as c -= d
+- similar compact forms for * / and % exist
+- this results in shorter (and often faster) code
+
+// example using compact operators
+sum = 0; 
+product = 1;
+for (Count = 0;  Count < 13; Count++)
+   {
+   Total += Count;
+   product *= Count;
+   }
+
+The do-while Statement
+
+
+- the do-while loop puts Boolean expression after the body of loop
+- body will be always executed at least once
+- if Boolean expression is TRUE, the loop will continue
+- useful for selected applications
+- example: read input and check if valid
+
+// do while example
+do {
+   cout << "Enter number between [0..9] ";
+   cin >> Value;
+   }
+while ((Value < 0) || (Value > 9));
+
+
+Nested Loops
+
+
+- often necessary for one loop to include another loop to solve a problem
+- need separate initializations, Boolean expressions, and increments
+- if the outer loop executes N times and the inner loop executes M times, the 
+inner loop body is executed N x M times
+
+// square printing example
+for (Height=0; Height < 14; Height++)
+   {
+   // outer loop
+   for (width=0; width < 17; width++)
+      {
+      // inner loop
+      cout << "*";
+      }
+   cout << endl;
+   }
+
+// factorial example
+for (Number = 1; Number < 42; Number++)
+   {
+   // outer loop
+   factorial = 1;
+   for (Count = 1; Count <= Number; Count++)
+      {
+      // inner loop
+      factorial *= Count;
+      }
+   cout << "Number = " << Number 
+        << "factorial = " << factorial << endl;
+   }
+
+Common Errors
+
+
+- extra semicolon after for (..) or while (..) causes zero line infinite loop
+- counters (and other variables) not properly initialized
+- Boolean expression will never become FALSE (infinite loop)
+- loop executes incorrect number of times (off by one common)
+- never update for loop counter variable inside for loop
+- never use same counter variable for nested loops 
+
+Software Engineering Tips
+
+
+- print debugging messages inside each loop so you know how many 
+iterations have been executed and what variables contain
+- anticipate loops may execute zero times and make sure that subsequent code 
+operated properly (i.e., all variables are initialized somehow)
+- anticipate and avoid infinite loops by making sure you get "closer" to the 
+terminating condition on each loop iteration
