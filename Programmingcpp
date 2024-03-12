@@ -1,7 +1,6 @@
 
-CSCE 2004	Programming Basics	-	previous page table of contents next page
+Programming Basic
 1 Programming Basics
-
 
 Problem Solving
 
@@ -199,8 +198,6 @@ Initial Sphere Program
 //---------------------------------------------------
 // Purpose: Program to calculate the volume and area
 //          of a sphere of a given radius.
-// Author:  John Gauch
-// Date:  Fall 2009
 //---------------------------------------------------
 
 int main()
@@ -219,8 +216,6 @@ Final Sphere Program
 //---------------------------------------------------
 // Purpose: Program to calculate the volume and area
 //          of a sphere of a given radius.
-// Author:  John Gauch
-// Date:    Fall 2009
 //---------------------------------------------------
 #include <iostream>
 #include <cmath>
@@ -256,8 +251,6 @@ Initial Statistics Program
 //---------------------------------------------------
 // Purpose: Program to calculate mean and variance 
 //          of five input values.
-// Author:  John Gauch
-// Date:	  Fall 2009
 //---------------------------------------------------
 #include <iostream>
 using namespace std;
@@ -278,8 +271,6 @@ Final Statistics Program
 //---------------------------------------------------
 // Purpose: Program to calculate mean and variance 
 //          of five input values.
-// Author:  John Gauch
-// Date:	  Fall 2009
 //---------------------------------------------------
 #include <iostream>
 using namespace std;
