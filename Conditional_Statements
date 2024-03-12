@@ -1,0 +1,407 @@
+
+Conditional Statements	
+Conditional Statements
+
+
+Boolean Variables
+
+
+bool Done;
+
+   Done = true;
+   Done = false;
+
+- data type name is bool
+- values are true and false
+- can also use 0 for false; any integer value except 0 for true
+- better style and greater readiblity if you use true and false
+
+Simple Logical Expressions
+
+
+- often need to look at data values and make choices in programs
+- logical expressions are true/false statements of data relationships
+- simple logical expressions are of the form: (data operator data)
+- data terms are either variables or constants
+- operator terms are either relational or equality operators
+- the relational operators are: 
+	<		less than
+	>		greater than
+	<=		less than or equal
+	>=		greater than or equal
+- the equality operators are:
+	== 		equal to
+	!=		not equal to
+
+examples:  
+let a = 17 and b = 42
+(a < b) is true
+(a >= b) is false
+(a == b) is false
+(a != b) is true
+
+Complex Logical Expressions
+
+
+- can combine expressions to get complex logical expressions
+- useful for more realistic data comparison tasks
+- syntax of the form: (expression operator expression)
+- expression is a simple logical expression
+- operator is a logical operator
+- the logical operators are:
+	&&		and
+	||		or 
+
+examples:
+let x = 3.14 and y = 7.89
+((x < 4) && (y < 8)) is true (because both halves are true)
+((x > 3) && (y > 8)) is false (because second half is false)
+((x < 4) || (y > 8)) is true (because first half is true)
+((x < 3) || (y < 8)) is true (because second half is true)
+((x > 4) || (y > 8)) is false (because both halves are false)
+
+Use of NOT Operator
+
+
+- the not operator ! reverses the logical value of an expression
+- "not true" is same as "false"
+- "not false" is same as "true"
+
+examples:
+let a = 7 and  b = 3
+(a > b)  is true	!(a > b)  is false
+(a <= b)  is false	!(a <= b)  is true
+(a == b) is false 	!(a == b)  is true
+(a != b) is true 	!(a != b)  is false
+
+DeMorgans Law
+
+
+- NOT operator on complex expression has following effect
+- !(e1 && e2) same as (!e1 || !e2)
+- !(e1 || e2) same as (!e1 && !e2)
+- where e1 and e2 are simple logical expressions
+- note that && and || are interchanged and the ! is applied to both terms
+
+examples:
+let x = 4.33 and y = 9.28
+((x < 5) && (y < 10)) is true
+!((x < 5) && (y < 10)) is false
+( !(x < 5) || !(y < 10)) is also false (using DeMorgans law on above)
+((x >= 5) || (y >= 10)) is also false
+!((x >= 5) || (y >= 10)) is true
+( !(x < 5) && !(y >= 10)) is also true (using DeMorgans law on above)
+((x > 5) && (y < 10)) is also true (again)
+
+The if Statement
+
+
+- can selectively execute code using if statement
+- when logical expression is true, selected code is executed
+- when logical expression is false, selected code is skipped
+- selected code can be either a single statement or a statement "block" 
+- should indent code to aid program readability (see below)
+- you only need semi-colon after single statements (not after { } characters)
+- NEVER put a semi-colon directly after the Boolean expression 
+(or you will execute the null statement instead of the code you intended)
+
+// if statement syntax
+if ( Boolean expression )
+{
+   statements to execute if expression is true
+}
+
+// simple if example
+cin >> a >> b;
+if (a < b)
+{ 
+   cout << "A is smaller than B\n";
+}
+
+Two Alternative if-else Statement
+
+
+- often need two alternatives in an if statement
+- want to execute certain code if expression is true
+- want to execute different code if expression is false
+- the if-else statement lets you do this
+- can use single statement or block of code for either part
+- should indent code to aid program readability (see below)
+
+// if-else statement syntax
+if ( Boolean expression )
+{
+   statements to execute if expression is true
+}
+else
+{
+   statements to execute if expression is false
+}
+
+// simple if-else example
+cin >> a >> b;
+if ((a > 0) && (b > 0))
+{
+   c = a / b;
+   a = a - c;
+}
+else
+{
+   c = a * b;
+   a = b + c;
+}
+
+// an ugly example
+if (a < b) {
+c = a * 3;
+a = b - c; } else 
+a = c + 5;
+
+Nested if Statements
+
+
+- often need to check one condition within another
+- can nest if statements to accomplish this
+- need to take care when matching up { } brackets
+- use indentation to reflect nesting and aid readability
+
+// nested if example
+cin >> a >> b;
+if (a < b)
+{
+   cout << "A is smaller than B\n";
+   if ((a > 0) && (b > 0))
+   {
+      cout << "both positive\n";
+      c = a / b;
+      a = a - c;
+   }
+   else
+   {
+      cout << "one or both negative\n";
+      c = a * b;
+      a = b + c;
+   }
+}
+
+// confusing example
+if (a > 0) {
+   if (b < 0) {
+      a = 3 * b;
+      c = a + b; } }
+   else {
+      a = 2 * a;
+      c = b / a; }
+
+The switch Statement
+
+
+- switch statement convenient for handling multiple if-else cases
+- need to use single value as decision variable
+- need to identify code to be executed for each case
+- essential to end each case with break command
+- can use default for all cases not specifically labeled
+
+// switch syntax
+switch ( decision variable )
+{
+   case value1 : statements;
+      break;
+   case value2: statements;
+      break;
+   ...
+   default:  statements;
+}
+
+Switch Example
+
+
+- command processing is typical application of switch
+- need to select from among N input values
+
+// declare variables
+int Command;
+int Money;
+int Balance = 0;
+
+// print command prompt
+cout << "Enter command number:\n"
+     << "   0 - quit\n"
+     << "   1 - deposit money\n"
+     << "   2 - withdraw money\n"
+     << "   3 - print balance\n";
+cin >> Command;
+
+// handle banking command
+switch (Command)
+{
+   case 0: // quit code
+      cout << "See you later!" << endl;
+      break;
+
+   case 1: // deposit code
+      cout << "Enter deposit amount: ";
+      cin >> Money;
+      Balance = Balance + Money;
+      break;
+
+   case 2: // withdraw code
+      cout << "Enter withdraw amount: ";
+      cin >> Money;
+      Balance = Balance - Money;
+      break;
+
+   case 3: // print code
+      cout << "Current balance = " << Balance;
+      break;
+
+   default: cout << "Error\n";
+}
+
+Common Errors
+
+
+- placing a semicolon after a Boolean expression will cause the "empty 
+statement" to be executed instead of the desired code
+- missing or unmatched ( ) brackets in logical expressions
+- complex logical expression should use nested (( ) && ())  format
+- accidental use of !! instead of || for specifying an OR
+- incorrect use of DeMorgans law resulting in wrong code
+- missing or unmatched { } brackets in if-else or switch statement
+- missing break on switch causes multiple cases to be executed
+- beware use of => =< and =! they are syntactically incorrect
+- beware use of & and | they have a different meaning
+- beware use of = instead of == it has a different meaning
+
+Software Engineering Tips
+
+
+- always indent your program to reflect the nesting of blocks of code
+- print debugging messages in each block of code so you know where your 
+program is going and what variables contain
+- anticipate potential input errors and handle them in your program
+- when testing a program select a variety of program inputs to force the 
+program to execute all blocks of code
+
+Initial Grade Program
+
+
+//---------------------------------------------------
+// Purpose: Program to convert test scores to grades.
+//---------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   // Local variable declarations
+   // Read input parameters
+   // Calculate grade
+   // Print output
+   return 0;
+}
+
+Final Grade Program
+
+
+//---------------------------------------------------
+// Purpose: Program to convert test scores to grades.
+//---------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+// Local variable declarations
+float Score;
+char Grade;
+
+   // Read input parameters
+   cout << "Enter test score: ";
+   cin >> Score;
+
+   // Calculate grade
+   if (Score >= 90)
+      Grade = 'A';
+   else if (Score >= 80)
+      Grade = 'B';
+   else if (Score >= 70)
+      Grade = 'C';
+   else if (Score >= 60)
+      Grade = 'D';
+   else 
+      Grade = 'F';
+
+   // Print output
+   cout << "Your grade was " << Grade << endl;
+   return 0;
+}
+
+Initial Prime Program
+
+
+//---------------------------------------------------
+// Purpose: Program to check for small primes.
+//    Method is to look for prime factors up to 
+//    the square root of the input number. If none
+//    are found the number is prime.
+//---------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   // Local variable declarations
+   // Read input parameters
+   // Check if number is prime
+   // Print output
+   return 0;
+}
+
+Final Prime Program
+
+
+//---------------------------------------------------
+// Purpose: Program to check for small primes
+//    Method is to look for prime factors up to 
+//    the square root of the input number. If none
+//    are found the number is prime.
+//---------------------------------------------------
+#include <iostream>
+using namespace std;
+
+// Global constant declarations
+const int TRUE = 1;
+const int FALSE = 0;
+
+int main()
+{
+   // Local variable declarations
+   int Number;
+   int Prime = TRUE;
+
+   // Read input number
+   cout << "Enter a number between [1..100]: ";
+   cin >> Number;
+
+   // Check input is valid
+   if ((Number < 1) || (Number > 100))
+      cout << "Error: Number is out of range\n";
+   else
+   {
+      // Check if Number is prime
+      if (Number == 1) Prime = FALSE;
+      if ((Number > 2) && (Number % 2 == 0)) Prime = FALSE;
+      if ((Number > 3) && (Number % 3 == 0)) Prime = FALSE;
+      if ((Number > 5) && (Number % 5 == 0)) Prime = FALSE;
+      if ((Number > 7) && (Number % 7 == 0)) Prime = FALSE;
+
+      // Print output
+      if (Prime == TRUE)
+         cout << "Number " << Number << " IS prime\n";
+      else
+         cout << "Number " << Number << " is NOT prime\n";
+   }
+
+   return 0;
+}
