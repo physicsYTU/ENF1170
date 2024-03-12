@@ -1,0 +1,22 @@
+// Calculates the sum of two integers 
+
+#include <iostream> 
+
+using namespace std;
+
+int main()
+{
+
+  int a, b, total; 
+
+cout << "Enter two integers: ";
+
+    cin >> a >> b;
+
+        total = a + b;
+
+    cout << "The sum is " << total << endl;
+
+return 0; 
+
+}
