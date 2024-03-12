@@ -18,6 +18,9 @@ You don't have to specify everything while writing its code, which makes the pro
 but you don't get the opportunity to learn the logic structure of the program like C++.
 Once you have learned the C++ language, then other languages will be easy for you to learn, as your foundation becomes strong.
 
+
+Syllabus
+
 Topic 1 - Introduction
 
 Topic 2 - C++ Basis
