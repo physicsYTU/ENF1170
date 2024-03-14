@@ -2,11 +2,14 @@ Task 1
 
 sin(), cos(), and tan() fonksiyonlarının kullanımı için bir program yazınız.
 30 dercelik açının sinüs, kosinüs, tanjant ve kotanjant değerlerini bulunuz.
+(math.h)
 
 Task 2
 
 0-100 arasında 10 tane rasgele sayı üreten bir program yazınız.
+(rand())
 
 Task 3
 
 Klavyeden girilen bir sayının çift olup olmadığını sınayan bir program yazınız.
+(if-else deyimini kullanınız)
