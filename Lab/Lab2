@@ -3,6 +3,8 @@ Task 1
 sin(), cos(), and tan() fonksiyonlarının kullanımı için bir program yazınız.
 30 dercelik açının sinüs, kosinüs, tanjant ve kotanjant değerlerini bulunuz.
 (math.h)
+0 - 360 derece açılar için sin cos ve tan değerlrini bulan  ve aşağıdaki gibi tablo oluşturan bir program yazınız.
+
 
 Task 2
 
