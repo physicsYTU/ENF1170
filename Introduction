@@ -1,0 +1,504 @@
+Introduction
+Terminology:
+
+Computer program: sequence of statements designed to accomplish some task
+Programming: planning/creating a program
+Syntax: rules that specify which statements (instructions) are legal
+Programming language: a set of rules, symbols, and special words
+Semantic rule: meaning of the instruction
+
+C++ Programs
+C++ Program Basics:
+
+Programming instructions must be written according to syntax rules
+Compiler checks that program follows syntax rules
+Metalanguage: term used to describe syntax rules
+C++ program: collection of one or more subprograms--called functions
+Subprogram or function is collection of statements that, when invoked, performs some task
+Every C++ program has one and ONLY one function called main()
+Token: smallest individual program unit
+Token: divided into special symbols, word symbols, and identifiers
+
+Symbols
+Special Symbols:
+
+Include mathematical symbols and punctuation marks
+Blank also special symbol
+Some tokens made up of two characters (with no blank)--still considered as single symbol
+Special Symbol Examples:
++     ? 
+-     ,
+*     <=
+/     !=
+.     ==
+;     >=  
+
+Word Symbols:
+
+Another type of token
+Reserved words or keywords
+Reserved words: always lowercase, each considered to be single symbol with special meaning
+Word Symbol Examples:
+int
+float
+double
+char
+void
+return  
+Identifiers
+Using Identifiers:
+
+Another type of token
+
+Identifiers: used as names for variables, constants, and functions
+Identifiers: consist of letters, digits, and underscore character (_)
+Identifiers: must begin with letter or underscore (best not to use underscore for portability)
+C++: case sensitive
+Some predefined identifiers (cout and cin)
+Unlike reserved words, predefined identifiers may be redefined--but generally not good idea
+
+
+Legal Identifier Examples:
+
+first
+conversion
+payRate
+Illegal Identifier Examples:
+employee Salary (cannot use space)
+Hello! (cannot use special characters, like exclamation mark)
+one+two (cannot use special characters, like + character)
+2nd (cannot begin with digit)
+
+A Caution: reserved words, "keywords," and predefined identifiers...
+Here is a list of all the reserved words in Standard C++, and a few predefined identifiers for the sake of comparison.
+
+There is a distinction between reserved words and predefined identifiers, which are sometimes collectively referred to as keywords. Nevertheless, be aware that the terminology is nonstandard. As an illustration, some authors use keyword in the same sense that others use reserved word.
+
+C++ Reserved Words
+
+The reserved words of C++ may be conveniently placed into several groups. In the first group, we put those that were also present in the C programming language and have been carried over into C++. There are 32 such reserved words:
+
+auto   const     double  float  int       short   struct   unsigned
+break  continue  else    for    long      signed  switch   void
+case   default   enum    goto   register  sizeof  typedef  volatile
+char   do        extern  if     return    static  union    while
+
+There are another 30 reserved words that were not in C, are therefore new to C++:
+
+asm         dynamic_cast  namespace  reinterpret_cast  try
+bool        explicit      new        static_cast       typeid
+catch       false         operator   template          typename
+class       friend        private    this              using
+const_cast  inline        public     throw             virtual
+delete      mutable       protected  true              wchar_t
+
+The following 11 C++ reserved words are not essential when the standard ASCII character set is being used, but they have been added to provide more readable alternatives for some of the C++ operators, and also to facilitate programming with character sets that lack characters needed by C++.
+and      bitand   compl   not_eq   or_eq   xor_eq
+and_eq   bitor    not     or       xor
+Note that your particular compiler may not be completely up-to-date, which means that some (and possibly many) of the reserved words in the preceding two groups may not yet be implemented.
+
+
+Some Predefined Identifiers
+
+Beginning C++ programmers are sometimes confused by the difference between the two terms reserved word and predefined identifier, and some potential for confusion.
+
+One of the difficulties is that some keywords that one might "expect" to be reserved words are not. The keyword main is a prime example, and others include things like the endl manipulator and other keywords from the vast collection of C++ libraries.
+
+For example, you could declare a variable called main inside your main function, initialize it, and then print out its value (but ONLY do that to verify that you can!). On the other hand, you could not do this with a variable named else. The difference is that else is a reserved word, while main is "only" a predefined identifier.
+
+Here is a short list of some predefined identifiers:
+
+cin   endl     INT_MIN   iomanip    main      npos  std
+cout  include  INT_MAX   iostream   MAX_RAND  NULL  string
+References: http://www.cppreference.com/keywords/index.html
+http://msdn.microsoft.com/en-us/library/2e6a4at9(VS.80).aspx
+
+
+Data Types
+Using Data Types:
+
+Set of values together with set of operations called data type
+C++ data types classified into three categories:
+Simple data type
+Structured data type
+Pointers
+Simple Data Types (three categories):
+Integral: integers (numbers without a decimal)
+Floating-point: decimal numbers
+Enumeration type: user-defined data type
+Integral Data Types (further classified):
+char
+short
+int
+long
+bool
+unsigned char
+unsigned short
+unsigned int
+unsigned long
+Each data type associated with different set of values
+Size of number represented determines data type
+Data type determines amount of memory used
+Should use most efficient data type for program requirements
+Different compilers may have different range of values for each data type
+
+int Data Type:
+Numbers with no decimal point
+Positive integers do not require + sign in front of them (but, can include +)
+No commas are used within integer
+***Commas used for separating items in a list***
+int Data Type Examples:
+-6728
+0
+78
+bool Data Type:
+
+Two values: true and false, called logical (or Boolean) values
+An expression that evaluates to true or false called logical (Boolean) expression
+In C++, bool, true, and false are reserved words
+Older compilers do not include bool data type
+
+char Data Type:
+Smallest integral data type
+Can hold numeric values -128 to 127
+Used to represent characters: letters, digits, and special characters
+char data type can represent each character on keyboard
+char data values represented within single quotation marks (e.g., 'r')
+Blank is represented as ' ' (space between single quotes)
+char Data Type Examples:
+ 'A', 'a', '0', '*', '+', '$', '&' 
+
+Floating-Point Data Types:
+Represent numbers with decimal points (real numbers)
+C++ uses form of scientific notation called floating-point notation
+In C++, letter E (or e) represents the exponent
+
+Floating-Point Data Types (further classified):
+float
+double
+long double
+Each data type associated with different set of values
+Size of number represented determines data type
+Data type determines amount of memory used
+float data type:
+float data type:
+Range: -3.4E+38 to 3.4E+38
+Memory allocated: 4 bytes
+Maximum number of significant digits (decimal places): 6 or 7
+Float values called single precision
+
+double data type:
+Range: -1.7E+308 to 1.7E+308
+Memory allocated: 8 bytes
+Maximum number of significant digits (decimal places): 15
+Double values called double precision
+Precision: maximum number of significant digits
+Should use most efficient data type for program requirements
+Different compilers may have different range of values for each data type
+Most newer compilers, double and long double are same
+
+Floating-Point Data Type Examples:
+Real Number   C++ Floating-Point Notation
+75.924        7.592400E1
+0.18          1.800000E-1
+0.0000453     4.530000E-5
+-1.482        -1.482000E0
+7800.0        7.800000E3
+***Some compilers, default constant float values to double, and provide a warning when assigning constant float values to float data type variables. You may want to declare float data values as double to eliminate warnings.***
+
+string Type:
+Programmer-defined data type (not included in earlier versions of C++)
+To use string data type, string library must be included (include file)
+Sequence of zero or more characters
+Enclosed in double quotation marks (e.g., "r")
+null string: string with no characters
+Each character in string has a relative position
+Position of first character is 0 (zero), 2nd character is 1, etc.
+Length of string is total number of characters (e.g., "C++" length = 3)
+Arithmetic Operators and Operator Precedence
+Using Arithmetic Operators and Operator Precedence:
+
+Operations inside of parentheses () are evaluated first +, -, *, and / can be used with integral and floating-point data types
+% modulus operator only used with integral types
+
+When dividing integral values, quotient truncated, not rounded
+
+Unary operator: used with only one operand
+Binary Operator: used with two operands
+
+C++ Mathematical Operators (in order of precedence):
+
+1) *   multiplication
+1) /   division
+1) %   remainder (modulus operator)
+2) +   addition
+2) -   subtraction
+
+***Operators having same level of precedence are evaluated from left to right.***
+
+Expressions
+Using Expressions:
+
+Integral expression: all operands are integers
+Floating-point expression: all operands are floating-point
+Integral expression yields integral result
+Floating-point expression yields a floating-point result
+Mixed expression: operands are integers and floating-point
+Mixed expression yields a floating-point result (integer changed to floating-point)
+
+Mixed Expression Examples:
+2 + 3.5 = 5.5
+6  /  4 + 3.9 = 4.9
+5.4  *  2 - 13.6 + 18  /  2 = 6.200000000000001
+
+Type Conversion (Casting):
+Implicit type coercion: value of one type is automatically (implicitly) changed to another type
+Explicit type conversion: use cast operator (two forms)
+static_cast<dataTypeName>(expression): more stable
+dataType(expression): C-style typecasting
+
+Type Casting Examples:
+static_cast<float>(5) = 5.0
+int(5.5) = 5 //C-style typecasting
+int('A') = 65 //C-style typecasting
+***Remember: char data type yields an integral value. Review (ASCII table).***
+Input, Memory, and Data
+
+
+Using Input:
+
+Data must be loaded into main memory before it can be manipulated
+Storing data in memory is two-step process:
+Instruct computer to allocate memory
+Include statements to put data into allocated memory
+Allocating Memory (Constants and Variables):
+Name and define data type to store data for each memory location
+Declaration statement used to allocate memory
+Variables: memory cells whose contents can be modified during program execution
+Possible to declare multiple variables in same statement (must be same type)
+Named Constant: memory location whose data cannot change during program execution
+Using named constant simplifies code modification - change in declaration statement affects code globally
+In C++, const is reserved word
+
+Four characteristics of variables:
+Name
+Type
+Size
+Value
+Syntax for declaring variables to allocate memory:
+dataType identifier;
+
+Examples:
+int myVar; //declares one int variable
+float myFloat, myFloat2, myFloat3; //declares three float variables
+Syntax for declaring named constants to allocate memory (uses keyword const and must assign value):
+const dataType identifier = value;
+
+Example:
+const double PI = 3.14;
+Storing Data into Variables (declaring and initializing variables):
+Variables can be declared anywhere in program
+Must be declared before can be used
+In C++, = called assignment operator
+Data stored in memory (using name of variable or constant), either using assignment statement or input statement
+C++ does not automatically initialize variables
+When variable declared, only memory is allocated
+When variable declared with no value, memory cell may contain value from setting of bits from previous use
+Expression on right side is evaluated, then its value is assigned to variable (a memory location) on left side
+Variable initialization: variable given a value at declaration (good programming principle)
+Remember: assignment (=) is NOT equality (==)
+Assignment Statement Examples:
+variable = expression;
+
+myVar = 10; //assigns value of 10 to myVar
+
+int i; //allocates memory for variable i
+i = i + 2; //evaluates i (right side), adds two to it, and assigns new value to memory location i (left side)
+Initialization Statement Examples:
+int variable = expression;
+
+int myVar = 10; //allocates memory for variable myVar, and assigns value of 10 to myVar
+
+//declares two double variables (myDouble and myDouble3), initializes myDouble2 with value of 25.5
+double myDouble, myDouble2=25.5, myDouble3;
+Input (Read) Statement:
+cin used with >> (stream extraction operator) to gather input
+When value for variable not known before program is written--value input through cin and >>(stream extraction operator)
+Input (Read) Statement Examples:
+cin >> variableName >> variableName. . .;
+
+cin >> miles; //computer gets value from standard input device, and places value in memory cell named miles
+
+cin >> feet >> inches; //input multiple values into multiple memory locations with single statement  
+Problems Using Mixed Values:
+Assigning Mixed Values:
+Assigning floating-point value to int type variable - fractional part dropped (truncated)
+Assigning integer value to floating-point type variable - adds decimal point (.) and 0 (zero)
+Reading Mixed Values:
+Reading (cin >>) floating-point value into int type variable, reading stops at decimal point
+Remaining value stays in buffer
+May get error on next read
+Reading integer value into floating-point type variable - adds decimal point (.) and 0 (zero)
+***Problems occur ONLY when placing floating-point values into int type variables, NOT the reverse.***
+Increment and Decrement Operators
+Using Increment and Decrement Operators:
+
+Increment operator (++) increases value of variable by 1
+Decrement operator (--) decreases value of variable by 1
+Increment and decrement operators each have two forms: prefix and postfix
+Prefix syntax:
+++ variable or --variable
+Postfix syntax:
+variable++ or variable--
+Prefix and Postfix Operator Differences:
+Prefix and postfix operators used as stand-alone statement--results are same:
+x = 0;
+
+//either way, x = 1 
+++x;
+x++;
+Differences in prefix and postfix operators occur in assignment:
+//First statement assigns 0 to x
+//Second statement increments x to 1 and assigns 1 to y.  Both have the value of 1
+x = 0; 
+y = ++x;
+
+//versus...
+
+//First statement assigns 0 to x
+//Second statement assigns 0 to y and increments x to 1
+//Result: x evaluates to 1 and y evaluates to 0  
+//***Parentheses can override order of operations***
+x = 0; 
+y = x++;
+Output
+Using Output:
+
+Output statement written with cout and stream insertion operator (<<)
+Standard output device normally monitor screen
+To move cursor to beginning of next line requires either predefined word endl, with insertion operator (<<), or escape sequence '\n'
+In C++, \ called escape character and \n called newline escape sequence
+To include cin and cout, appropriate header file must be included:
+
+#include <iostream>
+Escape Sequence Examples:
+  \n	//Newline: cursor moves to beginning of next line
+  \t	//Tab: cursor moves to next tab stop
+  \b	//Backspace: cursor moves one space left
+  \r	//Return:	cursor moves to beginning of current line (not next line)
+  \\	//Backslash: backslash printed
+  \'	//Single quotation: single quotation mark printed
+  \"	//Double quotation: double quotation mark printed
+Preprocessor Directives:
+In C++, most operations and functions must be imported from collection of libraries
+For example, for input/output, header file iostream must be included
+Preprocessor directives (i.e., names of header files) tell computer where to locate required libraries
+Preprocessor directives processed by program called preprocessor--before program goes through compiler
+Preprocessor commands begin with #--must appear at beginning of program
+General syntax:
+#include<headerFileName>
+Using cin/cout and namespace:
+C++ program contains two parts:
+Preprocessor directives (include header files)
+The program
+Preprocessor directives and program statements create C++ source code
+Source code must be saved in file with file extension .cpp
+General syntax:
+#include <iostream>
+using namespace std;
+Compiler generates object code
+Saved in file with .obj file extension
+Executable code produced and saved in file with .exe file extension
+Commonly used header files:
+Older versions of C++, header files had file extension .h (using no namespace)
+In (ANSI/ISO Standard) C++, cin/cout declared in header file iostream, within namespace std
+ANSI C++ removes extension
+To use cin and cout, use following two statements:
+#include <iostream>
+using namespace std;
+Commonly used header files:
+<iostream>  //input/output 
+<cmath>  //math functions
+<string>  //string functions
+<iomanip>  //formatting manipulations for input/output
+Using string Data Type:
+Must access definition from header file string
+Include following preprocessor directive:
+#include<string>
+Creating a C++ Program
+Putting It Together:
+
+Two Parts:
+Preprocessor directives (include files)
+The program
+Preprocessor directives and program statements constitute C++ source code
+Source code saved in file with file extension .cpp
+Compiler generates object code (saved in file with .obj file extension)
+Executable code produced (saved in file with .exe file extension)
+C++ Program Form and Style:
+Every C++ program MUST have one and ONLY one function main()
+Basic parts of function main() (as with any other C++ function):
+Function Heading
+Function Body
+Syntax errors found in compilation (i.e., by compiler)
+Use of Blanks:
+One or more blanks separate input numbers
+Blanks also used to separate reserved words, identifiers,and other symbols
+Semicolons, Brackets, and Commas:
+All C++ statements end with a semicolon (statement terminator)
+Brackets {} separate blocks of code
+Commas separate items in a list
+Semantics (meaning or interpretation):
+Program may not run, or run improperly, even with syntax errors removed
+For example, 2 + 3 * 5 and (2 + 3) * 5
+both are syntactically correct expressions, with different meanings
+Documentation:
+Comments help document code:
+Single line comments begin with //, multiple line comments enclosed between /* and */
+Identifiers should employ meaningful names (e.g., firstName, empID)
+Identifiers using more than one word: capitalize first letter of each new word, or use underscore between each word
+User Prompts:
+When program input through keyboard is expected, must inform user
+Prompt commands: statements that inform user of expected input
+Additionally, "echo" print user input for verification
+More on Assignment Statements:
+Compound assignment statements: shorthand method of assignment
+Compound assignment defined: op is binary arithmetic operator, op=
+Simple assignment statement variable = variable op (another variable or expression);
+Rewritten as compound assignment: variable op= (another variable or expression);
+Example:
++=, -=, *=, /=, and %=
+
+x *= y; //equivalent to x = x * y;
+
+Simple Program:
+Begin program with comments for documentation
+Include header files
+Declare named constants, if any
+Write definition of function main()
+
+
+Summary:
+
+Program begins with comments (documentation)
+System resources used for I/O
+
+Input statements: get data (e.g., keyboard, file, etc.)
+Output statements: print/display (or echo) results (e.g., screen, file, etc.)
+First statement of program--after comments--is preprocessor directive
+Preprocessor directive includes header file (e.g., iostream)
+Two types of memory locations for data manipulation:
+Named constants (usually put before main when used throughout program)
+
+Variables
+Program must contain at least one function: main()
+Variables to manipulate data, can be declared in function main()
+Body of function main() has following form:
+
+int main ()
+{
+  variable declarations;
+  statements...;
+  return 0;
+}
+
