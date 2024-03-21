@@ -1,0 +1,72 @@
+Task 1
+
+Aşağıdaki komutları programiçerisine yazarak sonuçları yazdırarak bulunuz
+
+i. 
+if ( b != 0 ) c = a/b;
+
+ii.
+if ( b != 0 && a > 0 ) c = a/b;
+
+iii.
+int x=1, y=2, s;
+bool u, z = true, t, w;
+u = x > 3;
+z = x <= y && y > 0;
+t = y <= 0 || z;
+w = !s;
+s = 2 > 1;
+
+
+iv.
+double x=1.3, y=2.7, c=0.;
+if (x > y) cout << "x is greater than y.";
+if ( y > 0. ) cout << x/y << endl;
+if ( x+y != 0. ) c = 1/(x+y);
+cout << "c = " << c << endl;
+
+v.
+if ( x+y != 0. ) {
+c = 1/(x+y);
+cout << "c = " << c << endl;
+}
+
+vi.
+
+
+if ( x+y != 0. ) {
+c = 1/(x+y);
+cout << "c = " << c << endl;
+} else {
+cout << "c is undefined! " << endl;
+}
+
+
+Task 2
+
+i. Klavyeden girilen bir sayının çift olup olmadığını sınayan bir program yazınız.
+ii.
+
+Task 3. 
+Write a program that inputs a value for x and outputs the corresponding value of f(x). Inputs are given as the numbers betwween x= 0 and x=7. 
+what are the results.
+
+f(x) = 2 for x < 3
+f(x) = 2x/3 for 3 ≤ x ≤ 6
+f(x) = 4 for x> 6
+
+
+Task 3. 
+i.Toplam = 1 + 2 + 3 + ......+ N   toplamını klavyeden girilen bir N sayısı için hesaplayan bir progream yazınız. Sonucu formülü ile hesaplayıp karşılaştırınız. 
+ii. Yazdığınız programı Çarpma= 1 * 2 * 3 * ...... * N şeklinde düzenleyiniz.
+iii. Klavyeden girilen bir N sayısından  1 e kadar sayıların kareleri bulan ve yan yana yazan bir program yazınız. 
+1  1
+2  4
+3  9
+.  .
+iii. Klavyeden girilen bir N sayısından  1 e kadar sayıları için Toplam = 1 + 1/2^1 + 1/2^3 +.....+ 1/2^N  değerini bulan bir program yazınız. 
+
+Task 4.
+
+In a Compton Scattering experiment, X-rays of wavelength λ = 10 pm  are scattered from a target. Write a program to find the wavelength in pm of 
+the x-rays scattered through the angle θ for the range from 0 degree to 180^0.
