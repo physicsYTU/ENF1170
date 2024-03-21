@@ -123,3 +123,40 @@ Task 4.
 
 In a Compton Scattering experiment, X-rays of wavelength λ = 10 pm  are scattered from a target. Write a program to find the wavelength in pm of 
 the x-rays scattered through the angle θ for the range from 0 degree to 180^0.
+
+Task 5. 
+Programı çalıştırıp sonucu açıklayınız. 
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int height;
+    
+  
+    cout << " yüksekliğini girin: ";
+    cin >> height;
+    
+    
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < height - i - 1; j++) {
+            cout << " ";
+        }
+        for (int k = 0; k < 2 * i + 1; k++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    
+ 
+    for (int i = 0; i < height / 3; i++) {
+        for (int j = 0; j < height - 1; j++) {
+            cout << " ";
+        }
+        cout << "***" << endl;
+    }
+    
+    return 0;
+}
+
