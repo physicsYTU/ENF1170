@@ -1,6 +1,6 @@
 Task 1
 
-Aşağıdaki komutları programiçerisine yazarak sonuçları yazdırarak bulunuz
+Aşağıdaki komutları program içerisine yazarak sonuçları bulunuz
 
 i. 
 if ( b != 0 ) c = a/b;
