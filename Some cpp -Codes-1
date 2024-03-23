@@ -1,0 +1,157 @@
+#include <iostream> o
+
+using namespace std; 
+
+int main() /
+{
+    int n, i, sum = 0; 
+
+    cout << "\n\n Display n terms of natural number and their sum:\n"; 
+    cout << "---------------------------------------\n"; 
+	cout << " Input a number of terms: "; 
+	cin >> n; 		
+    cout << " The natural numbers up to the " << n << "th term are: \n"; 
+
+    for (i = 1; i <= n; i++) 
+    {
+        cout << i << " "; 
+		 sum = sum + i; 
+    }
+
+    cout << "\n The sum of the natural numbers is: " << sum << endl;
+}
+
+
+-----------
+
+#include <iostream>  
+using namespace std;  
+
+int main()  
+{
+    int num1, factorial = 1;  
+    cout << "\n\n Find the factorial of a number:\n"; 
+ 	cout << " Input a number to find the factorial: "; 
+	cin >> num1;  
+
+    for (int a = 1; a <= num1; a++) 
+    {
+        factorial = factorial * a; 
+    }
+
+	cout << " The factorial of the given number is: " << factorial << endl; 
+    return 0; 
+}
+
+
+----
+
+#include <iostream>  
+#include <math.h>   
+
+using namespace std; 
+
+int main() 
+{
+    double sum = 0, a;  
+    int n, i;            
+
+    // Display a message to find the sum of the series 1 + 1/2^2 + 1/3^3 +...+ 1/n^n
+    cout << "\n\n Find the sum of the series 1 + 1/2^2 + 1/3^3 +.....+ 1/n^n:\n";
+ 
+     cout << " Input the value for nth term: ";
+    cin >> n;  
+
+    for (i = 1; i <= n; ++i)  
+    {
+        a = 1 / pow(i, i);  
+        cout << "1/" << i << "^" << i << " = " << a << endl;  
+        sum += a;  
+    }
+
+     cout << " The sum of the above series is: " << sum << endl;
+ 
+    return 0;  
+}
+
+------
+
+#include <iostream>  
+using namespace std;  
+
+int main()  
+{
+    int i, n, sum = 0;  
+
+    // Display a message to find the sum of the series (1*1) + (2*2) + (3*3) + (4*4) + (5*5) + ... + (n*n)
+    cout << "\n\n Find the sum of the series (1*1) + (2*2) + (3*3) + (4*4) + (5*5) + ... + (n*n):\n";
+ 
+     cout << " Input the value for nth term: ";
+    cin >> n;  
+
+    for (i = 1; i <= n; i++) 
+	{
+        sum += i * i;  
+        cout << i << "*" << i << " = " << i * i << endl;   
+    }
+
+     cout << " The sum of the above series is: " << sum << endl;
+
+    return 0;  
+}
+
+-----
+
+#include <iostream>  
+
+using namespace std;  
+int main()  
+{
+    int i, j, n, sum = 0, tsum;  
+     cout << "\n\n Find the sum of the series (1) + (1+2) + (1+2+3) + (1+2+3+4) + ... + (1+2+3+4+...+n):\n";
+ 
+     cout << " Input the value for nth term: ";
+    cin >> n;  
+    for (i = 1; i <= n; i++)  
+	{
+        tsum = 0;  
+
+        for (j = 1; j <= i; j++)  
+		{
+            sum += j; // Add 'j' to 'sum'
+            tsum += j; // Add 'j' to 'tsum' for the current term
+
+            cout << j;  
+            if (j < i)  
+			{
+                cout << "+";  
+            }
+        }
+
+        cout << " = " << tsum << endl;   
+    }
+    cout << " The sum of the above series is: " << sum << endl; 
+    return 0; 
+}
+
+-----
+
+#include <iostream>  
+using namespace std;  
+
+int main() 
+{
+    int i, j, rows;
+     cout << "\n\n Display the pattern using number repeating for a row:\n";
+     cout << " Input number of rows: ";
+    cin >> rows;  
+
+     for (i = 1; i <= rows; i++)  
+    {
+        for (j = 1; j <= i; j++)  
+        {
+            cout << i;  
+        }
+        cout << endl; 
+    }
+}
