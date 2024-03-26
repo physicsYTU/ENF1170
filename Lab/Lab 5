@@ -101,3 +101,23 @@ a.  Write a program to print the minimum of four input integers.
 b.  Write a program which inputs n numbers from keyboard and tells the smallest and largest?
 
 Task 7
+What is the output of this program
+
+
+include <iomanip>
+#include <iostream>   // defines cout 
+using namespace std;
+int main()
+{ for (int x=1; x <= 12; x++) 
+  { for (int y=1; y <= 12; y++)
+    cout << setw(4) << x*y; cout << endl;
+} 
+}
+
+Task 7
+
+Write a code to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
+
+
+Task 8
+
