@@ -116,7 +116,7 @@ int main()
 
 Task 7
 
-Write a code to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
+Write a code by using functions to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
 
 
 Task 8
