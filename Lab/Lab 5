@@ -94,3 +94,10 @@ cout << (m<n?m:n)<< " is the minimum." << endl;
 
 
 The conditional expression  (m<n?m:n)evaluates to m if  m<n,andton otherwise.
+
+Task 6
+
+a.  Write a program to print the minimum of four input integers.
+b.  Write a program which inputs n numbers from keyboard and tells the smallest and largest?
+
+Task 7
