@@ -1,5 +1,5 @@
 Task 1:        1st Correct the code 
-What is the output of this program?
+i. What is the output of this program?
 
 int main()
 { 
@@ -10,24 +10,27 @@ if (z == 0) cout << "z == 0.\n";
 else cout << "z does not equal 0.\n";                      // z != 0
 }
 
-Task 2
-
+ii.
 Correct the code for conditions to find the minimum of three integers and find the results of program. 
 
 int main()
 { int n1,n2,n3;
 cout << "Enter three integers: ";
-cin >> n1 >> n2 >> n3;
+cin << n1 << n2 << n3;
 if (n1 <= n2 && n1 <= n3) cout << "Their minimum is " << n1 <<endl; 
 if (n2 <= n1 && n2 <= n3) cout << "Their minimum is " << n2 <<endl; 
 if (n3 <= n1 && n3 <= n2) cout << "Their minimum is " << n3 <<endl;
 }
 
 
-Task 3 Learning if
+Task : Learning if
+
+Play the game and see the code.
+
 
 This program finds a number that the user selects from 1 to 8:
-This program finds a number that the user selects from 1 to 8:
+
+
 int main()
 { cout << "Pick a number from 1 to 8." << endl;
 char answer;
@@ -60,8 +63,8 @@ else cout << "Your number is 8." << endl;
 }
 }
 
-Task 4
-a.Correct the program to find BA-CB-DC-FD.
+Task 2
+i.Correct the program to find BA-CB-DC-FD.
 
 This program converts a test score into its equivalent letter grade:
 
@@ -78,11 +81,10 @@ else cout << "Error: that score is out of range.";
 }
 
 
-b. Modify and write the above program using a "switch Statement" to select a range of scores.
+ii. Modify and write the above program using a "switch Statement" to select a range of scores.
 
-Task 5 
 
-What is the result of this program?  Why we use this statement? =>  (m<n ? m:n)  
+iii. What is the result of this program?  Why we use this statement? =>  (m<n ? m:n)  
 
 
 int main()
@@ -95,13 +97,12 @@ cout << (m<n?m:n)<< " is the minimum." << endl;
 
 The conditional expression  (m<n?m:n)evaluates to m if  m<n,andton otherwise.
 
-Task 6
+Task 3
 
-a.  Write a program to print the minimum of four input integers.
-b.  Write a program which inputs n numbers from keyboard and tells the smallest and largest?
+i.  Write a program to print the minimum of four input integers.
+ii.  Write a program which inputs n numbers from keyboard and tells the smallest and largest?
 
-Task 7
-What is the output of this program
+iii. What is the output of this program
 
 
 include <iomanip>
@@ -114,10 +115,39 @@ int main()
 } 
 }
 
-Task 7
+iv. Write a code by using functions to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
 
-Write a code by using functions to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
+Task 4.
 
+Aşağıdaki fonsiyonu çalıştırıp çıktısı ekrana yazdırınız.
 
-Task 8
+// function declaration
+void greet() {
+    cout << "Hello World";
+}
+
+ii. Check orders aof the numbers. Is it correct?
+
+// program to print a text
+
+#include <iostream>
+using namespace std;
+
+// display a number
+void displayNum(int n1, float n2) {
+    cout << "The int number is " << 5*n1;
+    cout << "The double number is " << 2*n2;
+}
+
+int main() {
+     
+     int num1 = 5;
+     double num2 = 5.5;
+
+    // calling the function
+    displayNum(num2, num1);
+  
+    return 0;
+}
+
 
