@@ -115,7 +115,8 @@ int main()
 } 
 }
 
-iv. Write a code by using functions to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
+iv. Write a program (code) to implement the formula for the permutation function:  P(n,k)= n!/(n-k)!
+    Write a program (code) to implement the formula for the permutation function by using FUNCTION :  P(n,k)= n!/(n-k)!
 
 Task 4.
 
