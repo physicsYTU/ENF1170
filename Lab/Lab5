@@ -91,7 +91,7 @@ int main()
 { int m,n;
 cout << "Enter two integers: ";
 cin>>m>>n;
-cout << (m<n?m:n)<< " is the minimum." << endl;
+cout << (m<n ? m:n)<< " is the minimum." << endl;
 }
 
 
