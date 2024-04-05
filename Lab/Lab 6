@@ -1,0 +1,237 @@
+Task 1
+
+i.  Copy the program given below. Save (position.cpp), compile and run it.
+
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+int main(){
+ ofstream dosya("projectile.txt");
+ if(dosya.is_open() == false)
+ {
+ cout << "cannot open file projectile.txt\n";
+ return 0;
+ }
+ int x,y;
+ double v0 = 100.0, t = 0.0, g = 9.81;
+ double theta = 60.0 * M_PI/180.0;
+ while(t <= 20.0){
+ x = v0*cos(theta)*t;
+ y = v0*sin(theta)*t - 0.5*g*t*t;
+ dosya << t << '\t' << x << '\t' << y << endl;
+ t = t + 1.0;
+ }
+ dosya.close();
+ cout << "Data is saved to projectile.txt\n";
+ return 0;
+}
+
+
+ii. Copy and paste the code below. Save (as triangle.cpp), compile and run it.   
+// Computing the area of a triangle  
+#include <iostream>  
+#include <cmath> using
+namespace std;  
+// The function prototype  
+double TArea(double, double, double);  
+int main()  
+{  
+    double a, b, c, area;     
+    cout << "Enter the sides of the triangle: ";     
+    cin >> a >> b >> c;        
+    area = TArea(a, b, c);
+    cout << "The area of this triangle is " << area << endl;   
+    return 0;
+} 
+// Returns the area of any triangle 
+double TArea(double a, double b, double c)  
+{    
+     // Check if any side is negative
+     if (a<0. || b<0. || c<0.) return 0.0; 
+     // Check if any side is greater than sum of two 
+     if (a >= b+c) return 0.0;
+     if (b >= a+c) return 0.0;     
+     if (c >= a+b) return 0.0; 
+     // Calculate and return the area   
+     double u, area;     
+     u = 0.5*(a+b+c);
+     area = sqrt(u*(u-a)*(u-b)*(u-c));
+     return area;  
+} 
+
+
+
+iii. Aşağıdaki programı klavyeden girilen N tane sayının ortalmasını alacak şekilde düzeltiniz.
+
+
+/* This program computes integer averages. */ 
+
+#include<iostream>
+using namespace std;
+
+int average(int first_number, int second_number, int third_number);
+
+int average(int first_number, int second_number);
+
+/* MAIN PROGRAM: */
+
+
+int main()
+{
+	int number_A = 5, number_B = 3, number_C = 10;
+	
+	cout << "The integer average of " << number_A << " and ";
+	cout << number_B << " is ";
+	cout << average(number_A, number_B) << ".\n\n";
+	
+	cout << "The integer average of " << number_A << ", ";
+	cout << number_B << " and " << number_C << " is ";
+	cout << average(number_A, number_B, number_C) << ".\n";
+	
+	return 0;
+}
+/* END OF MAIN PROGRAM */
+
+/* FUNCTION TO COMPUTE INTEGER AVERAGE OF 3 INTEGERS: */
+int average(int first_number, int second_number, int third_number)
+{
+	return ((first_number + second_number + third_number) / 3);
+}
+/* END OF FUNCTION */
+
+/* FUNCTION TO COMPUTE INTEGER AVERAGE OF 2 INTEGERS: */
+int average(int first_number, int second_number)
+{
+	return ((first_number + second_number) / 2);
+}
+/* END OF FUNCTION */
+
+
+Task 2
+Aşağıdaki programda kullanılan kütüphaneyi N tane sayı için güncelleyiniz.
+-----
+/* Header file "averages.h" */
+
+#ifndef AVERAGES_H
+#define AVERAGES_H
+
+/* (no constant or type definitions in this case) */
+
+/* FUNCTION TO COMPUTE INTEGER AVERAGE OF 3 INTEGERS: */
+int average(int first_number, int second_number, int third_number);
+
+/* FUNCTION TO COMPUTE INTEGER AVERAGE OF 2 INTEGERS: */
+int average(int first_number, int second_number);
+
+#endif
+-----
+//The code in the main program file is as follows:
+#include<iostream>
+#include"averages.h"
+
+using namespace std;
+
+int main()
+{
+	int number_A = 5, number_B = 3, number_C = 10;
+	
+	cout << "The integer average of " << number_A << " and ";
+	cout << number_B << " is ";
+	cout << average(number_A, number_B) << ".\n\n";
+	
+	cout << "The integer average of " << number_A << ", ";
+	cout << number_B << " and " << number_C << " is ";
+	cout << average(number_A, number_B, number_C) << ".\n";
+	
+	return 0;
+}
+
+
+Task 3
+
+i. To convert temperatures written in Fahrenheit to Celsius (Centigrade), you subtract 32, multiply by 5 and then divide by 9. To convert Celsius to Absolute Value (Kelvin), you add 273.15. Write a program that displays a temperature conversion chart on the screen as follows:
+
+	   Fahrenheit     Celsius        Absolute Value
+	
+	   0              -17.78         255.37
+	   20             -6.67          266.48
+	   40             4.44           277.59
+	   ...            ......         ......
+	   ...            ......         ......
+	   300            148.89         422.04
+
+ii. Aşağıdaki programı düzenleyerek yukarıdaki programda kullanınız.
+
+#include <iostream>
+using namespace std;
+
+const int LOWER = 310;
+const int UPPER = 5000;
+const int STEP = 5;
+
+int main() 
+{	
+	int fahr = LOWER; 
+	double celsius = 0;
+	
+	/* Print table heading */
+	cout.width(15);
+	cout << "Fahrenheit";
+	cout.width(17);
+	cout << "Celsius";
+	cout.width(20);
+	cout << "Absolute Value" << endl << endl;
+
+	/* set format of individual values */
+	cout.precision(2); 
+	cout.setf(ios::fixed); 
+
+	/* print table from LOWER to UPPER */
+	for (fahr = LOWER ; fahr <= UPPER ; fahr += STEP) {
+		cout << "   ";
+		cout.width(15);
+		cout << fahr;
+		celsius = (static_cast<double>(5)/9) * (fahr - 32);
+		cout.width(15);
+		cout << celsius;
+		cout.width(15);
+		cout << celsius + 273.15 << endl;
+	}
+	return 0;
+}
+
+Task 4 
+
+Aşağıdaki programda number 3 ve power 2 girilierse programın çıktısı ne olur?
+
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{	
+	double number = 0, answer = 0; 
+	int power = 0, count = 1;
+
+	/* prompt the user */
+	cout << "This program raises a number x to a non-negative integer power n.\n\n";
+	cout << "Please enter a number: ";
+	cin >> power;
+	cout << "To what power would you like it raised? ";
+	cin >> number;
+	cout << "\n";
+ 
+ 	/* echo the input */
+ 	cout << number << " raised to the power " << power << " is ";
+	
+	/* raise number to power */
+	answer = 1;
+	for (count = 0 ; count < power ; count++)
+		answer *= number;
+		
+	/* print answer */
+	cout << answer << ".\n";
+	
+	return 0;
+}
