@@ -1,0 +1,9 @@
+Task 1
+
+Çalışan öğrendiğimiz konular ile ilgili c++ programları yazınız.
+1- Hesap Makinası - (+-/*) ifelse ile
+2- Hesap Makinası - (+-/*) switch ile
+3- Hesap Makinası - yazdığınız topla, cikar, bol, carp fonsiyonlarını kullanarak
+5- Klavyeden girilen N tane sayının ortalama ve standart sapmasını bulan bir program
+5- Sin x, cos x veya e^x değerini hesaplayan bir program
+6- Girilen N tane elemana sahip matrisin en küçük/en büyük elemanını bulan bir program
