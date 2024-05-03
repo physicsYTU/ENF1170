@@ -1,0 +1,370 @@
+Task 1
+porgramı çalıştırıp çıktılarını inceleyiniz. İki porgram arasındaki farklar nelerdir? (Input 5 real numbers:1.2  3.5  -0.4  10.2  7.1)
+Her iki sıralamada i ve a[5] değerini yazdırınız.
+
+
+// Assigning and outputting an array
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  double a[5];
+
+  cout << "Input 5 real numbers:" << endl;
+  for(int i=0; i<5; i++)
+    cin >> a[i];
+
+  cout << "The reverse order: " << endl;
+  for(int i=4; i>=0; i--)
+    cout << a[i] << ' ';
+
+  cout << endl;
+
+  return 0;
+
+--
+// Assigning and outputting an array (modified)
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  const int n = 5;
+  double a[n];
+
+  cout << "Input " << n << " real numbers:" << endl;
+  for(int i=0; i<n; i++)
+    cin >> a[i];
+
+  cout << "The reverse order: " << endl;
+  for(int i=n-1; i>=0; i--)
+    cout << a[i] << ' ';
+
+  cout << endl;
+
+  return 0;
+}
+
+Task 2. Programı çalıştırıp, yorum olarak cout satırlarına eklenen terimlerin ne yaptığını belirtiniz.
+
+
+// Initilising an array
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  const int n = 5;
+  double a[n] = {8.4, 3.6, 9.1, 4.7, 3.9};
+  double b[n] = {-1.0, 1.0};
+  double c[n] = {0.0};
+
+  for(int i=0; i<n; i++)
+     cout << "a[" << i << "] = " << a[i] << endl;
+  cout << endl;
+
+  for(int i=0; i<n; i++)
+     cout << "b[" << i << "] = " << b[i] << endl;
+  cout << endl;
+
+  for(int i=0; i<n; i++)
+     cout << "c[" << i << "] = " << c[i] << endl;
+
+  return 0;
+}
+
+
+Task 3 
+Programda verilen matrisleri inceleyiniz. 2x2 matrisi çarpımı yapan bir program yazınız.
+
+// Using two-dimensional arrays
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  const int COL = 3, ROW = 2;
+  double a[ROW][COL], b[ROW][COL], c[ROW][COL];
+
+  cout << "Input matrix A:\n";
+  for(int i=0; i<ROW; i++)
+    for(int j=0; j<COL; j++) cin >> a[i][j];
+
+  cout << "Input matrix B:\n";
+  for(int i=0; i<ROW; i++)
+    for(int j=0; j<COL; j++) cin >> b[i][j];
+
+  cout << "Matrix C = A+B:\n";
+  for(int i=0; i<ROW; i++){
+    for(int j=0; j<COL; j++){
+       c[i][j] = a[i][j] + b[i][j];
+       cout << c[i][j] << ' ';
+    }
+    cout << '\n';
+  }
+
+  return 0;
+}
+
+
+Task 4
+Programda verilen matrisleri inceleyiniz.
+
+// Passing an array to a function
+#include <iostream>
+using namespace std;
+
+double sum(double x[], int);
+
+int main ()
+{
+  double a[5];
+
+  cout << "Enter 5 reals: ";
+  for (int k=0; k<5; k++)
+     cin >> a[k];
+
+  double s = sum(a, 5);
+
+  cout << "The sum is " << s << endl;
+
+  return 0;
+}
+
+// returns the sum of the first n elements
+double sum(double x[], int n)
+{
+  double t = 0.0;
+  for(int i=0; i<n; i++)
+       t += x[i];
+  return t;
+}
+
+
+
+---
+
+
+
+// Passing a matrix to a function
+#include <iostream>
+using namespace std;
+
+double trace(double matrix[][3], int);
+
+int main ()
+{
+  const int size = 3;
+  double a[size][size];
+
+  cout << "Enter elements of a square matrix of size "
+       << size << endl;
+
+  for (int i=0; i<size; i++)
+  for (int j=0; j<size; j++)
+     cin >> a[i][j];
+
+  double tr = trace(a, size);
+
+  cout << "the trace is " << tr << endl;
+
+  return 0;
+}
+
+// returns the the trace of nxn matrix
+double trace(double matrix[][3], int n)
+{
+  double t = 0.0;
+  for(int i=0; i<n; i++)
+       t += matrix[i][i];
+  return t;
+}
+
+
+Task 5
+
+The following program outputs the dot (scalar) product of two vectors. For n dimensional vectors the dot product is defined as A.B = a1b1 + a2b2 + ... + anbn. 
+
+
+#include <iostream>
+using namespace std;
+
+// Returns dot (scalar) product of two vectors of size n
+double dotProd(double a[], double b[], int n = 1)
+{
+  ...//Buraya kodunuzu yazınız 
+...  //Buraya kodunuzu yazınız 
+...//Buraya kodunuzu yazınız 
+  return dp;
+}
+int main ()
+{
+  const int size = 3;
+  double v1[size], v2[size];
+
+  cout << "Enter the components of\n";
+  cout << "the first  vector: ";
+  for(int j=0; j<size; j++) cin >> v1[j];
+  cout << "the second vector: ";
+  for(int j=0; j<size; j++) cin >> v2[j];
+
+  double dot = dotProd(v1, v2, size);
+
+  cout << "dot product of the vectors: "
+       << dot << endl;
+
+  return 0;
+}
+
+Task 6
+
+Mini,mum ve maksimum değerleri bulan bir program için eksik kalan kısmı doldurunuz
+
+// Determine the minimum and maximum values in an array
+#include <iostream>
+
+int main ()
+{
+  const int n=10; // number of elements in the array
+  double temperature[n] = { 23.5, 32.8, 33.9, 31.3, 26.9,
+                            21.3, 19.4, 23.7, 26.9, 31.6 };
+  double min, max;
+
+  // initialise min and max as the value of the first element
+  min = max = temperature[0];
+
+  for (int i=1; i<n; i++) {
+...//Buraya kodunuzu yazınız 
+...//Buraya kodunuzu yazınız 
+  }
+
+  std::cout << "minimum temperature is " << min << std::endl;
+  std::cout << "maximum temperature is " << max << std::endl;
+
+  return 0;
+}
+
+
+
+----
+
+ortalama ve standart sapma değerlerini yazan program için eksik satırları doldurunuz
+
+
+// Determine the mean and standard deviation of values in an array [method 1]
+// m1: is the mean of the values.
+// m2: is the mean of the square of the difference
+//     between the values and their mean.
+// See http://en.wikipedia.org/wiki/Standard_deviation
+#include <iostream>
+#include <cmath>
+
+int main ()
+{
+  const int n = 10; // number of elements in the array
+  double temperature[n] = { 23.5, 32.8, 33.9, 31.3, 26.9,
+                            21.3, 19.4, 23.7, 26.9, 31.6 };
+
+  double m1=0., m2=0.;
+  for (int i=0; i<n; i++) m1 += temperature[i];
+  ....//Buraya kodunuzu yazınız 
+
+  for (int i=0; i<n; i++) m2 += (temperature[i]-m1)*(temperature[i]-m1);
+  m2 /= n; // to account for a bias in the mean, we could divide by n-1
+
+ ....//Buraya kodunuzu yazınız 
+
+  std::cout << "the mean is " << m1 << std::endl;
+  std::cout << "the   sd is " << sd << std::endl;
+
+  return 0;
+}
+
+
+--bu programı inceleyip sonucu bastırınız
+
+// Determine the mean and standard deviation of values in an array [method 2]
+// m1 is the mean of the values
+// m2 is the mean of the squares of the values
+// See http://en.wikipedia.org/wiki/Standard_deviation and
+// http://en.wikipedia.org/wiki/Expectation_value/
+#include <iostream>
+#include <cmath>
+
+int main ()
+{
+  const int n = 10; // number of elements in the array
+  double temperature[n] = { 23.5, 32.8, 33.9, 31.3, 26.9,
+                            21.3, 19.4, 23.7, 26.9, 31.6 };
+
+  double m1=0., m2=0.;
+  for (int i=0; i<n; i++) {
+    m1 += temperature[i];
+    m2 += (temperature[i]*temperature[i]);
+  }
+  m1 /= n;
+  m2 /= n;
+  double sd = sqrt(m2-m1*m1);
+
+  std::cout << "the mean is " << m1 << std::endl;
+  std::cout << "the   sd is " << sd << std::endl;
+
+  return 0;
+}
+
+Aşağıdaki kod ne iiçin kullanılmaktadır.
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  const int n = 10; // number of elements in the array
+  double v[n] = { 23.5, 32.8, 33.9, 31.3, 26.9,
+                  21.3, 19.4, 23.7, 26.9, 31.6 };
+
+  cout << "Before sorting:\n";
+  for (int i=0; i<n; i++) cout << " " << v[i];
+  cout << endl;
+
+  // Perform Bubble Sort...
+  bool changed;
+  do{
+     changed = false;
+     for (int i=0; i<n-1; i++) {
+        if ( v[i] > v[i+1] ){
+           double swap = v[i];
+              v[i] = v[i+1];
+            v[i+1] = swap;
+           changed = true;
+        }
+     }
+  }while (changed);
+
+  cout << "After sorting:\n";
+  for (int i=0; i<n; i++) cout << " " << v[i];
+  cout << endl;
+
+  return 0;
+}
+
+---
+
+
+#include <iostream>
+#include <algorithm>
+
+int main ()
+{
+  int array[] = { 13, 5, -11, 0, 0, 32, 1, 2, 21, 99 };
+  int size = sizeof(array) / sizeof(array[0]);
+
+  std::sort(array, array + size);
+
+  for (int i = 0; i < size; ++i)
+     std::cout << array[i] << ' ';
+  std::cout << '\n';
+
+  return 0;
+}
