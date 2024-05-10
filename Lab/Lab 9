@@ -67,3 +67,131 @@ int main()
   cout << "string two: " << str2 << endl;
    return 0;
 }
+Task 2
+Programı çalışırıp isim 256 karakter, okulno 11 rakam uzunluğunda olacak şekilde düzenleyiniz.
+
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+
+int main ()
+{
+	char isim;
+	int okulno;
+cout<<"Isim : " ;	
+  cin>>isim;
+cout<<"Okul No :" ;
+cin>>okulno;
+
+  ofstream myFile("example.txt");
+
+  // check if the file is open
+  if (myFile.is_open())
+  {
+    myFile << isim <<"       This is first line.\n";
+    myFile << okulno <<"     This is second line.\n";
+    myFile.close();
+  }
+  else
+    cout << "Unable to open file example.txt";
+
+  return 0;
+}
+
+p4.cpp
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+
+int main ()
+{
+  const float PI=3.1415926;
+
+  string filename = "trigo.data";
+  ofstream myFile(filename.c_str());
+
+  if (myFile.is_open())
+  {
+      cout << "Writing data to the file: " << filename << endl;
+      myFile << setprecision(5) << fixed;
+
+      for(int deg=0; deg<=180; deg+=10)
+      {
+         float x = PI*deg/180.;
+         myFile << setw(3)  << deg
+                << setw(10) << sin(x)
+                << setw(10) << cos(x) << endl;
+      }
+      myFile.close();
+  }
+  else
+    cout << "Unable to open file " << filename;
+
+  return 0;
+}
+
+---p5.cpp
+mydata.txt
+3.4
+6.9
+8.2
+1.4
+3.6
+7.3
+2.8
+9.3
+8.1
+8.2
+
+--
+p6.cpp---programı çalıştırınız.
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main () {
+
+  ifstream fin("mydata.txt");
+  double x, sum=0.0;
+
+  for (int i=0; i<10; i++) {
+    fin >> x;
+    sum = sum + x;
+  }
+
+  fin.close();
+
+  cout << "The sum of all values in mydata.txt is " << sum << endl;
+}
+
+Task 3
+
+What is the output of the following program?
+p7.cpp
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+  double R=0.0, r = 1.0e+3, Rmax = 5.0e+3;
+
+  cout << scientific << setprecision(1);
+
+  do{
+    double power = 100.0* R/(R+r)/(R+r);
+    cout << setw(9) << r << setw(9) << R
+         << setw(9) << power << endl;
+    R += 500;
+
+  }while(R <= Rmax);
+
+  return 0;
+}
