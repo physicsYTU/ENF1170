@@ -1,0 +1,69 @@
+Task 1
+p1.cpp kodunu çalıştırınız ve trigonometrik değerleri virgülden sonra 10 rakam olacak şekilde değiştiriniz.
+
+-------p1.cpp------------
+int main()
+{
+  cout << setprecision(10) << fixed;
+
+  for(int deg=0; deg<=180; deg+=10)
+  {
+    double x = M_PI*deg/180.;
+    cout << setw(3)  << deg
+         << setw(15) << sin(x)
+         << setw(10) << cos(x) << endl;
+  }
+cout<<"\n";
+
+int    i = 1453;
+  float  f = 314.15926;
+  string s = "Yildiz Teknik University";
+  
+  cout << setw(30) << s << endl;          // default
+ cout << setw(30) << left << s << endl;  // left-justified
+ cout << setw(30) << right << s << endl; // right-justified
+ cout<<"\n";
+ cout << setw(10) << setfill('5') << i << endl;
+ cout<<"\n";
+ cout << setw(10) << i << endl;
+ cout << setw(10) << left << i << endl;
+ cout << setw(10) << right << i << endl;
+ cout<<"\n";
+ cout << setw(10) << dec << i << endl; // decimal (default)
+ cout << setw(10) << oct << i << endl; // octal (base 8)
+ cout << setw(10) << hex << i << endl; // hexadecimal (base 16)
+ cout<<"\n";
+ cout << setw(15) << fixed << setprecision(4) << f << endl;
+ cout << setw(15) << fixed << setprecision(2) << f << endl;
+ cout<<"\n";
+ cout << setw(15) << scientific << setprecision(3) << f << endl;
+   cout<<"\n";
+  cout<<"\n"; cout<<"\n"; 
+  
+  char a, b, c;
+  cout << "Enter three letters: ";
+  cin.get(a).get(b).get(c);
+  cout << a << " " <<  b << " " << c;
+ return 0;
+}
+------------------p2.cpp---
+ #include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+ 
+  char str1[256], str2[256];
+ cout<<"\n";
+
+ cout << "Enter string one: ";
+  cin.get(str1, 256);
+  cout << "string one: " << str1 << endl;
+ cout<<"\n";
+  cout << "Enter string two: ";
+  cin >> str2;
+  cout << "string two: " << str2 << endl;
+   return 0;
+}
